@@ -22,7 +22,7 @@ Built with Docker, deployed on AWS EC2, and integrated with S3 using IAM Roles.
 - **Frontend**: HTML + Inline CSS
 - **Database**: SQLite
 - **Deployment**: Docker, AWS EC2
-- **Storage**: AWS S3 (optional for future uploads)
+- **Storage**: AWS S3 (for future uploads)
 
 ---
 
