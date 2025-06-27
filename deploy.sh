@@ -1,19 +1,19 @@
-#!/bin/bash
-# Install Docker if not already installed
-if ! command -v docker &> /dev/null
-then
-    echo "Docker not found. Installing Docker..."
-    sudo apt update
-    sudo apt install -y docker.io
-    sudo systemctl start docker
-    sudo systemctl enable docker
-    sudo usermod -aG docker $USER
-    newgrp docker
-fi
+  GNU nano 7.2                                                                                         deploy.sh
+\#!/bin/bash
 
-# Navigate to app directory and build image
-cd ~/DevOpsAssignment
+# Update & install Docker
+sudo apt update -y
+sudo apt install -y docker.io git
+
+# Start Docker and give permission
+sudo systemctl start docker
+sudo usermod -aG docker $USER
+
+# Clone your GitHub repo
+git clone https://github.com/SAMPREETHI26/TravelwebApp.git
+
+# Build and run Docker container
+cd TravelwebApp
 docker build -t travelweb-app .
-
-# Run container
-docker run -d -p 8000:8000 travelweb-app
+docker run -d -p 8080:8000 travelweb-app
+#change the port if it is not available
