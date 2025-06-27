@@ -1,4 +1,4 @@
-# 🌊 TravelwebApp - Aqua Adventures 🧳
+# 🌊 TravelwebApp - Sails and More 
 
 A simple Flask-based web application to book water adventure packages like kayaking, scuba diving, fishing, and more.  
 Built with Docker, deployed on AWS EC2, and integrated with S3 using IAM Roles.
@@ -96,11 +96,11 @@ Open `http://<EC2-Public-IP>:8000` in your browser 🎉
 
 ---
 
-## 💾 Optional: IAM + S3 Setup
+## 6.IAM + S3 Setup
 
 - Create an IAM Role with `AmazonS3FullAccess`
 - Attach it to your EC2 instance
-- Use `boto3` or `awscli` from your Flask app to upload to S3
+- Use `awscli` from your Flask app to upload to S3
 
 ---
 
@@ -121,7 +121,7 @@ TravelwebApp/
 
 ---
 
-## 🐳 Cloud-Init & Automation (Optional)
+## 🐳 Cloud-Init & Automation 
 
 Add this to EC2 User Data (cloud-init):
 
@@ -135,13 +135,6 @@ docker build -t travelweb-app .
 docker run -d -p 8000:8000 travelweb-app
 ```
 
----
-
-## 📝 License
-
-MIT License – Free to use for educational/demo purposes.
-
----
 
 ## 🙋‍♀️ Maintainer
 
