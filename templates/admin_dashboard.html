@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+</head>
+<body style="margin:0; padding:0; background:url('/static/background3.jpg') no-repeat center center fixed; background-size:cover; font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif; color:white;">
+
+    <div style="max-width:1000px; margin:40px auto; background-color:rgba(0,0,0,0.7); padding:30px; border-radius:15px; box-shadow:0 0 20px black;">
+        <h2 style="text-align:center; margin-bottom:20px;">Admin Dashboard</h2>
+
+        <div style="text-align:center; margin-bottom:20px;">
+            <a href="/" style="text-decoration:none; color:white; background-color:#e9aab0; padding:10px 20px; border-radius:8px; display:inline-block;">Logout</a>
+        </div>
+
+        {% if bookings %}
+        <table style="width:100%; border-collapse:collapse; background:white; color:black; border-radius:10px; overflow:hidden;">
+            <thead style="background:#333; color:white;">
+                <tr>
+                    <th style="padding:10px;">User</th>
+                    <th style="padding:10px;">Phone</th>
+                    <th style="padding:10px;">Date</th>
+                    <th style="padding:10px;">Persons</th>
+                    <th style="padding:10px;">Arrival</th>
+                    <th style="padding:10px;">Activities</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for b in bookings %}
+                <tr style="text-align:center;">
+                    <td style="padding:8px;">{{ b.name }}</td>
+                    <td style="padding:8px;">{{ b.phone }}</td>
+                    <td style="padding:8px;">{{ b.date }}</td>
+                    <td style="padding:8px;">{{ b.persons }}</td>
+                    <td style="padding:8px;">{{ b.arrival_time }}</td>
+                    <td style="padding:8px;">{{ b.activities }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div style="text-align:center; margin-top:30px;">No bookings yet.</div>
+        {% endif %}
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+</head>
+<body style="margin:0; padding:0; background:url('/static/background.jpg') no-repeat center center fixed; background-size:cover; font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif; color:white;">
+
+    <div style="background-color:rgba(0,0,0,0.7); max-width:500px; margin:5% auto; padding:30px; border-radius:15px; box-shadow:0 0 15px #000;">
+        <h2 style="text-align:center;">User Registration</h2>
+        <form method="POST" action="/register">
+            
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required
+                style="width:100%; padding:10px; border-radius:5px; border:none; margin-top:5px; margin-bottom:15px;">
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required
+                style="width:100%; padding:10px; border-radius:5px; border:none; margin-top:5px; margin-bottom:15px;">
+
+            <button type="submit"
+                style="width:100%; padding:12px; background-color:#ff9900; border:none; border-radius:8px; font-weight:bold; font-size:16px; color:white;">
+                Register
+            </button>
+        </form>
+        <p style="text-align:center; margin-top:15px;">
+            Already have an account? <a href="/login" style="color:#ffcc00;">Login</a>
+        </p>
+    </div>
+
+</body>
+</html>

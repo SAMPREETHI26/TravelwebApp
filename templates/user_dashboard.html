@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Your Bookings</title>
+</head>
+<body style="margin:0; padding:0; background:url('/static/background3.jpg') no-repeat center center fixed; background-size:cover; font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif; color:rgb(8, 8, 8);">
+
+    <div style="max-width:1000px; margin:5% auto; background-color:rgba(124, 202, 208, 0.75); padding:30px; border-radius:15px; box-shadow:0 0 20px #a6e5ea;">
+        <h2 style="text-align:center;">Welcome, {{ username }}</h2>
+
+        <div style="text-align:center; margin-bottom:20px;">
+            <a href="/book" style="margin:10px; padding:12px 20px; background-color:#007bff; border:none; border-radius:8px; text-decoration:none; color:white; font-weight:bold;">Book New Package</a>
+            <a href="/" style="margin:10px; padding:12px 20px; background-color:#dc3545; border:none; border-radius:8px; text-decoration:none; color:white; font-weight:bold;">Logout</a>
+        </div>
+
+        {% if bookings %}
+        <table style="width:100%; border-collapse:collapse; margin-top:20px; background-color:white; color:black; border-radius:10px; overflow:hidden;">
+            <thead style="background-color:#007bff; color:white;">
+                <tr>
+                    <th style="padding:12px;">Name</th>
+                    <th style="padding:12px;">Phone</th>
+                    <th style="padding:12px;">Date</th>
+                    <th style="padding:12px;">Persons</th>
+                    <th style="padding:12px;">Arrival</th>
+                    <th style="padding:12px;">Activities</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for b in bookings %}
+                <tr style="text-align:center;">
+                    <td style="padding:10px;">{{ b.name }}</td>
+                    <td style="padding:10px;">{{ b.phone }}</td>
+                    <td style="padding:10px;">{{ b.date }}</td>
+                    <td style="padding:10px;">{{ b.persons }}</td>
+                    <td style="padding:10px;">{{ b.arrival_time }}</td>
+                    <td style="padding:10px;">{{ b.activities }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p style="text-align:center; font-size:18px; color:#030303; margin-top:30px;">No bookings found.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>

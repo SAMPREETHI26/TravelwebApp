@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Your Adventure</title>
+</head>
+<body style="margin:0; padding:0; background:url('/static/background4.jpg') no-repeat center center fixed; background-size:cover; font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;">
+
+    <div style="max-width:600px; margin:5% auto; background-color:rgba(0,0,0,0.75); padding:30px; border-radius:15px; color:white; box-shadow:0 0 20px black;">
+        <h2 style="text-align:center;">Book a Package</h2>
+
+        <form method="POST" style="display:flex; flex-direction:column; gap:15px;">
+            <input type="text" id="name" name="name" placeholder="Your Name" required style="padding:10px; border-radius:6px; border:none;">
+            <input type="text" id="phone" name="phone" placeholder="Phone Number" required style="padding:10px; border-radius:6px; border:none;">
+            <input type="date" id="date" name="date" required style="padding:10px; border-radius:6px; border:none;">
+            <input type="number" id="persons" name="persons" placeholder="Number of Persons" required style="padding:10px; border-radius:6px; border:none;">
+            <input type="time" id="arrival_time" name="arrival_time" required style="padding:10px; border-radius:6px; border:none;">
+
+            <div style="margin-top:10px;">
+                <label><input type="checkbox" name="activities" value="Kayaking"> Kayaking</label><br>
+                <label><input type="checkbox" name="activities" value="Rafting"> Rafting</label><br>
+                <label><input type="checkbox" name="activities" value="Scuba diving"> Scuba Diving</label><br>
+                <label><input type="checkbox" name="activities" value="Boat Stay"> Boat Stay</label><br>
+                <label><input type="checkbox" name="activities" value="Fishing"> Fishing</label><br>
+                <label><input type="checkbox" name="activities" value="Surfing"> Surfing</label>
+            </div>
+
+            <button type="submit" style="padding:12px; background-color:#28a745; border:none; border-radius:8px; color:white; font-size:16px; cursor:pointer;">Book Package</button>
+        </form>
+
+        <div style="text-align:center; margin-top:20px;">
+            <a href="/user-dashboard" style="text-decoration:none; color:white; background-color:#007bff; padding:10px 20px; border-radius:8px; display:inline-block;">Back to Dashboard</a>
+        </div>
+    </div>
+
+</body>
+</html>
