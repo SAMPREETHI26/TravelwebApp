@@ -1,0 +1,27 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+
+packages:
+  - docker.io
+  - git
+
+runcmd:
+  # Add ubuntu to docker group
+  - usermod -aG docker ubuntu
+
+  # Enable and start Docker
+  - systemctl enable docker
+  - systemctl start docker
+
+  # Clone your repo (use your actual repo URL)
+  - git clone https://github.com/SAMPREETHI26/TravelwebApp.git /home/ubuntu/app
+
+  # Go to app directory
+  - cd /home/ubuntu/app
+
+  # Build and run Docker container
+  - docker build -t travelweb-app .
+  - docker run -d -p 8080:8000 travelweb-app
+
+#change the port if not available
